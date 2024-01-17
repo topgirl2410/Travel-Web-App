@@ -3,7 +3,7 @@ import './Subscribe.css'
 
 const Subscribe = () => {
     return (
-        <div className='subscribe'>Subscribe</div>
+        <div className='Subscribe'>Subscribe</div>
     )
 }
 
