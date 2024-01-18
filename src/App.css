@@ -58,4 +58,44 @@ img {
 .btn {
   border: none;
   outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  background: var(--gradient);
+  box-shadow: var(--boxShadow);
+  font-size: var(--h3FontSize);
+  font-weight: 500;
+  color: var(--primaryColor);
+  padding: 0.8rem 1rem;
+}
+
+.btn:hover {
+  background: var(--hoverColor);
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.container {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.secHeader {
+  margin-top: 2rem;
+}
+.secHeader span {
+  text-transform: uppercase;
+  color: var(--secColor);
+  font-size: var(--h3FontSize);
+  font-weight: 600;
+  letter-spacing: 0.5rem;
+}
+.secHeader h2 {
+  font-weight: 800;
+  color: var(--primaryColor);
+  padding: 1rem 0;
+  display: block;
+  text-transform: capitalize;
+  font-size: var(--h1FontSize);
 }/*# sourceMappingURL=App.css.map */
