@@ -1,13 +1,32 @@
+import { useState } from 'react';
+
 import './Header.css'
 
+// Import icons
+import { AiFillCloseCircle } from "react-icons/ai";
+import { TbGridDots } from "react-icons/tb";
+
+
+
 const Header = () => {
+    //Code statement to toggle the navbar in and out
+    const [active, setActive] = useState('menu');
+    const showNavbar = () => {
+        setActive('menu showMenu');
+    }
+
+    // Remove navbar 
+    const removeShowNavbar = () => {
+        setActive('menu');
+    }
+
     return (
         <div className='Navbar'>
             <div className="logoDiv">
-                <h2 className='logo'>Yago</h2>
+                <h1 className='logo'>Yago</h1>
             </div>
 
-            <div className="menu">
+            <div className={active}>
                 <div className="lists flex">
                     <li>
                         <a href="#">Destination</a>
@@ -25,18 +44,26 @@ const Header = () => {
                         <a href="#">Booking</a>
                     </li>
                 </div>
+
+
+                <div className="btns flex">
+                    <button className='btn'>Login</button>
+                    <button className='btn'>SingUp</button>
+                    <select className='lang'>
+                        <option value="">EN</option>
+                        <option value="">FR</option>
+                        <option value="">SP</option>
+                    </select>
+                </div>
+
+                <div className="closeIcon" >
+                    <AiFillCloseCircle className='icon' onClick={removeShowNavbar} />
+                </div>
             </div>
 
-            <div className="btns flex">
-                <button className='btn'>Login</button>
-                <button className='btn'>SingUp</button>
-                <select className='lang'>
-                    <option value="">EN</option>
-                    <option value="">FR</option>
-                    <option value="">SP</option>
-                </select>
+            <div className="toggleIcon" onClick={showNavbar}>
+                <TbGridDots className='icon' />
             </div>
-
 
         </div>
     )
