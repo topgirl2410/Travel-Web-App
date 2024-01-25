@@ -9,7 +9,7 @@ import { TbGridDots } from "react-icons/tb";
 
 
 const Header = () => {
-    //Code statement to toggle the navbar in and out
+    // Code statement to toggle the navbar in and out
     const [active, setActive] = useState('menu');
     const showNavbar = () => {
         setActive('menu showMenu');
@@ -20,8 +20,20 @@ const Header = () => {
         setActive('menu');
     }
 
+    // Code statement to add Background color to the menu at a certain heigh scrolling down
+    const [transparent, setTransparent] = useState('Navbar');
+    const addBg = () => {
+        if (window.scrollY >= 10) {
+            setTransparent('Navbar activeHeader')
+        } else {
+            setTransparent('Navbar')
+        }
+    }
+    window.addEventListener('scroll', addBg)
+
+
     return (
-        <div className='Navbar'>
+        <div className={transparent}>
             <div className="logoDiv">
                 <h1 className='logo'>Yago</h1>
             </div>
